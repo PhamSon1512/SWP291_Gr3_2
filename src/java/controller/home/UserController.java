@@ -86,15 +86,12 @@ public class UserController extends HttpServlet {
                 String email = request.getParameter("email");
                 String password = request.getParameter("password");
                 String repassword = request.getParameter("repassword");
-                String username = request.getParameter("username");
                 String name = request.getParameter("name");
-                String rgender = request.getParameter("gender");
                 String rphone = request.getParameter("phone");
-                int role_id = 2;
+                int role_id = 0;
                 String img = "default";
                 boolean status = true;
                 String enpassword = EncodeData.enCode(password);
-                boolean gender = Boolean.parseBoolean(rgender);
                 int phone = Integer.parseInt(rphone);
                 String fullname = Validate.capitalizeFirstLetter(name);
                 Account account = userdao.checkAcc(email, username);

@@ -50,7 +50,7 @@
                             </c:if>
 
                         <c:if test="${sessionScope.user == null}">
-                            <button class="btn btn-primary p-1" onclick="window.location.href = 'user?action=login'">Login</button>
+                            <button class="btn btn-primary p-1" onclick="window.location.href = 'login.jsp'">Login</button>
                         </c:if>
                         <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 py-3" style="min-width: 200px;">
                             <c:if test="${sessionScope.user.username != null}">

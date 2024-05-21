@@ -64,7 +64,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12 text-center">
-                                            <p class="mb-0 mt-3"><small class="text-dark me-2">Chưa có tài khoản ?</small> <a href="user?action=register" class="text-dark fw-bold">Đăng ký</a></p>
+                                            <p class="mb-0 mt-3"><small class="text-dark me-2">Chưa có tài khoản ?</small> <a href="register.jsp" class="text-dark fw-bold">Đăng ký</a></p>
                                         </div>
                                     </div>
                                 </form>
