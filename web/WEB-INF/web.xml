@@ -4,8 +4,40 @@
         <servlet-name>UserController</servlet-name>
         <servlet-class>controller.home.UserController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckLoginController</servlet-name>
+        <servlet-class>controller.home.CheckLoginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>controller.home.LogoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterController</servlet-name>
+        <servlet-class>controller.home.CheckRegisterController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ChangeInforController</servlet-name>
+        <servlet-class>controller.home.ChangeInforController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserController</servlet-name>
         <url-pattern>/user</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckLoginController</servlet-name>
+        <url-pattern>/checklogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterController</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangeInforController</servlet-name>
+        <url-pattern>/change</url-pattern>
     </servlet-mapping>
 </web-app>

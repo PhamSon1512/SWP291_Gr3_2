@@ -23,8 +23,8 @@
                             <h5 class="text-light title- footer-head">Club</h5>
                             <ul class="list-unstyled footer-list mt-4">
                                 <li><a href="contact.jsp" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Contact</a></li>
-                                <li><a href="service?action=all" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Service</a></li>
-                                <li><a href="blogs" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Blog</a></li>
+                                <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Service</a></li>
+                                <li><a href="#" class="text-foot"><i class="mdi mdi-chevron-right me-1"></i> Blog</a></li>
                             </ul>
                         </div>
 

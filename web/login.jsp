@@ -25,7 +25,7 @@
                             <div class="card-body">
                                 <h4 class="text-center">Đăng nhập</h4> 
                                 <c:set var="cookie" value="${pageContext.request.cookies}"/>
-                                <form action="user?action=checklogin" method="POST" class="login-form mt-4" onSubmit="document.getElementById('submit').disabled=true;">
+                                <form action="checklogin" method="POST" class="login-form mt-4" onSubmit="document.getElementById('submit').disabled=true;">
                                     <p style="color: red; align-content: center;">
                                         ${requestScope.error}
                                     </p>
@@ -55,7 +55,7 @@
                                                         <label class="form-check-label" for="remember-check">Lưu tài khoản</label>
                                                     </div>
                                                 </div>
-                                                <a href="user?action=recover" class="text-dark h6 mb-0">Quên mật khẩu ?</a>
+                                                <a href="recover.jsp" class="text-dark h6 mb-0">Quên mật khẩu ?</a>
                                             </div>
                                         </div>
                                         <div class="col-lg-12 mb-0">

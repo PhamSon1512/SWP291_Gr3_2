@@ -68,13 +68,13 @@
                             </c:if>
                             <div class="dropdown-divider border-top"></div>
                             <c:if test="${sessionScope.user != null}">
-                                <a class="dropdown-item text-" href="user?action=profile"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Tài khoản của tôi</a>
+                                <a class="dropdown-item text-" href="userProfile"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Tài khoản của tôi</a>
                                     </c:if>
                                     <c:if test="${sessionScope.user != null}">
-                                <a class="dropdown-item text-" href="user?action=logout"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Đăng xuất</a>
+                                <a class="dropdown-item text-" href="logout"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Đăng xuất</a>
                                     </c:if>
                                     <c:if test="${sessionScope.user == null}">
-                                <a class="dropdown-item text-" href="user?action=login"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Đăng Nhập</a>
+                                <a class="dropdown-item text-" href="login.jsp"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Đăng Nhập</a>
                                     </c:if>
                                     <c:if test="${sessionScope.user != null}">
                                         <c:if test="${sessionScope.user.role.role_id == 1}">
@@ -114,9 +114,15 @@
                             </ul>
     </li>
                     <li><a href="#" class="sub-menu-item">Blog</a></li>
-                    <li><a href="service?action=regClub" class="sub-menu-item">Register Club</a></li>
-                    <li><a href="contact.jsp" class="sub-menu-item">About us</a></li>
                     
+                        <c:if test="${sessionScope.user != null}">
+                    <li><a href="#" class="sub-menu-item">Register Club</a></li>
+                        </c:if>
+                    
+                        <c:if test="${sessionScope.user == null}">
+                    <li><a href="login.jsp" class="sub-menu-item">Register Club</a></li>
+                        </c:if>
+                    <li><a href="contact.jsp" class="sub-menu-item">About us</a></li>
                 </ul>
 
             </div>

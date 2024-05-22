@@ -185,24 +185,20 @@ public class AccountDAO extends DBContext {
         }
     }
 
-    /*public void UpdateImage(String username, Part img) throws SQLException {
-        String sql = "UPDATE `doctris_system`.`users` SET `img` = ? WHERE (`username` = ?)";
-        try {
-            connection = dbc.getConnection();
-            ps = connection.prepareStatement(sql);
-            InputStream image = img.getInputStream();
-            ps.setBlob(1, image);
-            ps.setString(2, username);
-            ps.executeUpdate();
-        } catch (Exception e) {
-        } finally {
-            if (connection != null) {
-                connection.close();
-            }
-        }
+    public void UpdateImage(int acc_ID, Part avatar_url) throws SQLException {
+        try {    
+            String sql = "UPDATE account\n "
+                + "SET avatar_url = '" + avatar_url
+                + "'WHERE acc_ID = '" + acc_ID + "'";
+            System.out.println(sql);
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+             Logger.getLogger(AccountDAO.class.getName()).log(Level.SEVERE, null, e);
+        } 
     }
 
-    public List<Account> getFilterByRole(String role_id) throws SQLException, IOException {
+    /*public List<Account> getFilterByRole(String role_id) throws SQLException, IOException {
         List<Account> list = new ArrayList<>();
         String sql = "SELECT u.username,u.name,u.gender,u.email,u.phone,r.name,u.status,u.img "
                 + "FROM doctris_system.users u "

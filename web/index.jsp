@@ -225,7 +225,7 @@
                                     <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
                                     <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
                                 </ul>
-                                <h6 class="text-primary">- Thai Son <small class="text-muted">Manager</small></h6>
+                                <h6 class="text-primary">- Pham Son <small class="text-muted">Manager</small></h6>
                             </div><!--end customer testi-->
                             
                             <div class="tiny-slide text-center">
