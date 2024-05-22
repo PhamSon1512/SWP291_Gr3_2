@@ -20,6 +20,10 @@
         <servlet-name>ChangeInforController</servlet-name>
         <servlet-class>controller.home.ChangeInforController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChangePasswordController</servlet-name>
+        <servlet-class>controller.home.ChangePasswordController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserController</servlet-name>
         <url-pattern>/user</url-pattern>
@@ -39,5 +43,9 @@
     <servlet-mapping>
         <servlet-name>ChangeInforController</servlet-name>
         <url-pattern>/change</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangePasswordController</servlet-name>
+        <url-pattern>/changepass</url-pattern>
     </servlet-mapping>
 </web-app>

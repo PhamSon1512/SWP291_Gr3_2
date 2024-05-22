@@ -27,7 +27,7 @@
                                 <c:set var="cookie" value="${pageContext.request.cookies}"/>
                                 <form action="checklogin" method="POST" class="login-form mt-4" onSubmit="document.getElementById('submit').disabled=true;">
                                     <p style="color: red; align-content: center;">
-                                        ${requestScope.error}
+                                        ${requestScope.loginError}
                                     </p>
                                     <p style="color: blue; align-content: center;">
                                         ${requestScope.success}
