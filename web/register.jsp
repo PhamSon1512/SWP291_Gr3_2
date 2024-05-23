@@ -22,6 +22,20 @@
     <link href="https://unicons.iconscout.com/release/v3.0.6/css/line.css" rel="stylesheet">
     <!-- Css -->
     <link href="assets/css/style.min.css" rel="stylesheet" type="text/css" id="theme-opt" />
+
+    <style>
+        .alert-fixed {
+            position: fixed;
+            top: -100px;
+            left: 0;
+            right: 0;
+            z-index: 1050;
+            transition: top 0.5s;
+        }
+        .alert-show {
+            top: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -49,7 +63,42 @@
                     <div class="card login-page bg-white shadow mt-4 rounded border-0">
                         <div class="card-body">
                             <h4 class="text-center">Sign Up</h4>
-                            <form action="index.jsp" class="login-form mt-4">
+
+                            <!-- Display error message if exists -->
+                            <%
+                                String errorMessage = (String) request.getAttribute("error");
+                                if (errorMessage != null) {
+                            %>
+                                <div class="alert alert-danger" role="alert">
+                                    <%= errorMessage %>
+                                </div>
+                            <%
+                                }
+                            %>
+
+                            <!-- Display success message if exists -->
+                            <%
+                                String successMessage = (String) request.getAttribute("success");
+                                if (successMessage != null) {
+                            %>
+                                <div class="alert alert-success alert-fixed" role="alert" id="successMessage">
+                                    <%= successMessage %>
+                                </div>
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function() {
+                                        var successMessage = document.getElementById('successMessage');
+                                        successMessage.classList.add('alert-show');
+                                        setTimeout(function() {
+                                            successMessage.classList.remove('alert-show');
+                                            window.location.href = 'homeAfter.jsp';
+                                        }, 2000); // 2 seconds delay
+                                    });
+                                </script>
+                            <%
+                                }
+                            %>
+
+                            <form action="register" class="login-form mt-4" method="post">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
@@ -76,25 +125,38 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <label class="form-label">Password <span class="text-danger">*</span></label>
-                                            <input type="password" class="form-control" placeholder="Password" name="password" required="">
-                                        </div>
-                                    </div>
+    <div class="mb-3">
+        <label class="form-label">Password <span class="text-danger">*</span></label>
+        <input type="password" 
+               oninvalid="CheckPassword(this);" 
+               oninput="CheckPassword(this);" 
+               value="${cookie.pass.value}" 
+               class="form-control" 
+               name="password" 
+               placeholder="Password" 
+               pattern="(?=.*[A-Z])(?=.*\W).{8,}" 
+               required>
+    </div>
+</div>
+
+<script>
+    function CheckPassword(input) {
+        const pattern = /^(?=.*[A-Z])(?=.*\W).{8,}$/;
+        if (!pattern.test(input.value)) {
+            input.setCustomValidity('Password must be at least 8 characters long and include at least one uppercase letter and one special character.');
+        } else {
+            input.setCustomValidity('');
+        }
+    }
+</script>
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label class="form-label">Confirm Password <span class="text-danger">*</span></label>
                                             <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" required="">
                                         </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <div class="mb-3">
-                                            <div class="form-check">
-                                                <input class="form-check-input align-middle" type="checkbox" value="" id="accept-tnc-check">
-                                                <label class="form-check-label" for="accept-tnc-check">Remember</label>
-                                            </div>
-                                        </div>
-                                    </div>
+
+
                                     <div class="col-md-12">
                                         <div class="d-grid">
                                             <button class="btn btn-primary">Register</button>
@@ -114,10 +176,11 @@
                                         </div>
                                     </div>
                                     <div class="mx-auto">
-                                        <span class="mb-0 mt-3"><small class="text-dark me-2">Already have an account ?</small> <a href="login.jsp" class="ms-auto">Sign in</a> <a href="#" class="ms-4">Forgot Password</a></span>
+                                        <span class="mb-0 mt-3"><small class="text-dark me-2">Already have an account ?</small> <a href="login.jsp" class="ms-auto">Sign in</a> </span>
                                     </div>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
