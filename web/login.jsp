@@ -36,7 +36,7 @@
                                         <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <label class="form-label">Email <span class="text-danger">*</span></label>
-                                                <input type="email" oninvalid="CheckEmail(this);" oninput="CheckEmail(this);" value="${cookie.email.value}" class="form-control" placeholder="Email" name="email" required="">
+                                                <input type="email" oninvalid="CheckEmail(this);" oninput="CheckEmail(this);" class="form-control" placeholder="Email" name="email" required="">
                                             </div>
                                         </div>
 

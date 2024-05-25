@@ -31,13 +31,6 @@
             </div>
 
             <ul class="dropdowns list-inline mb-0">
-
-                <li class="list-inline-item mb-0 ms-1">
-                    <a href="javascript:void(0)" class="btn btn-icon btn-pills btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
-                        <i class="uil uil-search"></i>
-                    </a>
-                </li>
-
                 <li class="list-inline-item mb-0 ms-1">
                     <div class="dropdown dropdown-primary">
                         <c:if test="${sessionScope.user != null}">
@@ -54,7 +47,10 @@
                         </c:if>
 
                         <c:if test="${sessionScope.user == null}">
-                            <button class="btn btn-primary p-1" onclick="window.location.href = 'login.jsp'">Login</button>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-primary flex-grow-1 me-1 p-1" onclick="window.location.href = 'login.jsp'">Login</button>
+                                <button class="btn btn-primary flex-grow-1 ms-1 p-1" onclick="window.location.href = 'register.jsp'">Sign Up</button>
+                            </div>
                         </c:if>
 
                         <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow border-0 mt-3 py-3" style="min-width: 200px;">
@@ -75,9 +71,9 @@
                             <c:if test="${sessionScope.user != null}">
                                 <a class="dropdown-item text-" href="profile.jsp"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Tài khoản của tôi</a>
                                     </c:if>
-                                <c:if test="${sessionScope.user != null}">
+                                    <c:if test="${sessionScope.user != null}">
                                 <a class="dropdown-item text-" href="#"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Thay đổi mật khẩu</a>
-                                </c:if>
+                                    </c:if>
                                     <c:if test="${sessionScope.user != null}">
                                 <a class="dropdown-item text-" href="logout"><span class="mb-0 d-inline-block me-1"><i class="uil uil-sign-out-alt align-middle h6"></i></span> Đăng xuất</a>
                                     </c:if>
