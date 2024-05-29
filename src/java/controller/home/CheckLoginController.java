@@ -62,7 +62,8 @@ public class CheckLoginController extends HttpServlet {
             if (account.getRoleID() == 1) {
                 response.sendRedirect("adminController");
             } else {
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.setAttribute("UserLogin", account.getName());
+                response.sendRedirect("index.jsp");
             }
         }
     }
